@@ -16,14 +16,13 @@ dependencies:
       url: https://github.com/Sineaggi/udp.git
       ref: master
   basic_utils: ^3.4.0
-  tuple: ^2.0.0
   leb128:
     git:
       url: https://github.com/Sineaggi/leb128.git
       ref: master
   async: ^2.6.1
 
-dev_dependencies:
-  pedantic: ^1.10.0
+#dev_dependencies:
+  #pedantic: ^1.10.0
 
 publish_to: none

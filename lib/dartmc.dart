@@ -8,7 +8,6 @@ import 'dart:typed_data';
 import 'package:async/async.dart';
 import 'package:basic_utils/basic_utils.dart';
 import 'package:leb128/leb128.dart';
-import 'package:tuple/tuple.dart';
 
 abstract class Resource {
   void dispose();
@@ -17,15 +16,6 @@ abstract class Resource {
 void using<T extends Sink>(T resource, void Function(T) fn) {
   fn(resource);
   resource.close();
-}
-
-Tuple2<String, int?> parse_address(String address) {
-  var uri = Uri.parse('//' + address);
-  if (uri.hasPort) {
-    return Tuple2<String, int?>(uri.host, uri.port);
-  } else {
-    return Tuple2<String, int?>(uri.host, null);
-  }
 }
 
 class Version {
